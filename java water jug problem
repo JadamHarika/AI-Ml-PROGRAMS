@@ -1,0 +1,70 @@
+import java.util.*;
+public class Main
+{
+public static void main(String[] args) {
+System.out.println("Water Jug Problem");
+Scanner res=new Scanner(System.in);
+System.out.println("enter the capacity of jug1");
+int x=res.nextInt();
+System.out.println("enter the capacity of jug2");
+int y=res.nextInt();
+System.out.println("enter the goal state");
+int a=res.nextInt();
+        while(true){
+           System.out.println("enter the rule");
+           int rule=res.nextInt();
+           if (rule==1){
+              if (x<4){
+                 x=4;
+              }
+           }
+           else if(rule==2){
+              if (y<3){
+                 y=3;
+              }
+           }
+          else if(rule==3){
+              if (x>0){
+                 x=0;
+              }
+          }
+          else if(rule==4){
+              if (y>0){
+                 y=0;
+              }
+          }
+          else if(rule==5){
+             if (x+y>=4 && y>0){
+
+                y=y-(4-x);
+                x=4;
+             }
+          }
+          else if(rule==6){
+              if (x+y>=3 && x>0){
+                x=x-(3-y);
+                y=3;
+              }
+          }
+          else if(rule==7)
+          {
+              if (x+y<=4 && y>=0){
+                 x=x+y;
+                 y=0;
+              }
+          }
+          else if(rule==8){
+             if (x+y<=3 && x>=0){
+                y=x+y;
+                x=0;
+             }
+          }
+    System.out.println("x value is"+x);
+    System.out.println("y value is"+y);
+          if (x==a){
+              System.out.println("Goal state is reached");
+           break;
+          }
+        }
+}
+}
