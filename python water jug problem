@@ -1,0 +1,35 @@
+python water jug problem:-
+print("Water Jug Problem")
+x=int(input("enter x value"))
+y=int(input("enter y value"))
+while(True):
+    rule=int(input("enter the rule"))
+    if rule==1:
+        if x<4:
+            x=4
+    if rule==2:
+        if y<3:
+            y=3
+    if rule==3:
+        if x>0:
+            x=0
+    if rule==4:
+        if y>0:
+            y=0
+    if rule==5:
+        if x+y>=4 and y>0:
+            x,y=4,y-(4-x)
+    if rule==6:
+        if x+y>=3 and x>0:
+            x,y=x-(3-y),3
+    if rule==7:
+        if x+y<=4 and y>=0:
+            x,y=x+y,0
+    if rule==8:
+        if x+y<=3 and x>=0:
+            x,y=0,x+y
+    print("x value is",x)
+    print("y value is",y)
+    if x==2:
+        print("Goal state is reached")
+        break
